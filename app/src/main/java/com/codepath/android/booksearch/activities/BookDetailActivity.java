@@ -1,16 +1,24 @@
 package com.codepath.android.booksearch.activities;
 
+import android.graphics.Movie;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.codepath.android.booksearch.R;
+import com.codepath.android.booksearch.models.Book;
+
+import org.parceler.Parcels;
 
 public class BookDetailActivity extends AppCompatActivity {
+    // the book to display
+    Book book;
+
     private ImageView ivBookCover;
     private TextView tvTitle;
     private TextView tvAuthor;
@@ -23,11 +31,20 @@ public class BookDetailActivity extends AppCompatActivity {
         ivBookCover = (ImageView) findViewById(R.id.ivBookCover);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         tvAuthor = (TextView) findViewById(R.id.tvAuthor);
-
+/*
+        // unwrap the book passed in via intent, using its simple name as a key
+        book = (Book) Parcels.unwrap(getIntent().getParcelableExtra(Book.class.getSimpleName()));
+        Log.d("BookDetailActivity", String.format("Showing details for %s'", book.getTitle()));
+        // set the title and overview
+       // ivBookCover.setImageU(book.getCoverUrl());
+        tvTitle.setText(book.getTitle());
+        tvAuthor.setText(book.getAuthor());
         // Extract book object from intent extras
-
+        book
         // Use book object to populate data into views
+*/
     }
+
 
 
     @Override
